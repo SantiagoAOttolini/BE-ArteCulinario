@@ -1,29 +1,38 @@
 const Food = require('../../models/Food')
 
 const getAll = (req, res) => {
-  Food.find({}, (err, products) => {
+  Food.find({}, (err, foods) => {
     if (err) res.send({ msg: 'can`t get the user list', error: err })
-    res.send(products)
+    res.send(foods)
   })
 }
 
 const getById = (req, res) => {
-  Food.findById(req.params.id, (err, recipes) => {
+  Food.findById(req.params.id, (err, foods) => {
     if (err)
       res.send({ msg: `Cant't get the product ${req.params.id}`, error: err })
-    res.send(recipes)
+    res.send(foods)
   })
 }
 const insert = (req, res) => {
   const food = new Food({
-    photo: 'public/uploads/guisoLentejas.jpg',
+    photo: '/server/public/images/001-apple.png',
     name: req.body.name,
+    valor: req.body.valor,
+    carbs: req.body.carbs,
+    protein: req.body.protein,
+    grease1: req.body.grease1,
+    grease2: req.body.grease2,
+    grease3: req.body.grease3,
+    fiber: req.body.fiber,
+    sodium: req.body.sodium,
+    adventages: req.body.adventages,
     description: req.body.description,
     Category: req.body.Category
   })
-  food.save(err => {
-    if (err) res.send({ msg: 'Cant`t save the Recipe', error: err })
-    res.send({ msg: 'Recipe saved', data: recipe })
+  food.save((err, doc) => {
+    if (err) return res.json({ success: false, err })
+    return res.status(200).json({ success: true })
   })
 }
 
