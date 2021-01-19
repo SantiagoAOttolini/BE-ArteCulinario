@@ -17,6 +17,7 @@ router.get('/auth', auth, (req, res) => {
     email: req.user.email,
     name: req.user.name,
     lastname: req.user.lastname,
+    accountType: req.user.accountType,
     role: req.user.role,
     image: req.user.image
   })

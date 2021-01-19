@@ -1,7 +1,7 @@
 const express = require('express')
 const food = require('./Food/foodIndex')
 const user = require('./Users/users')
-const businessFood = require('./Gastronomy Locals/businessFood')
+const businessFood = require('./Gastronomy-Locals/businessIndex')
 const pay = require('./Pays/Pays')
 
 const router = express.Router()

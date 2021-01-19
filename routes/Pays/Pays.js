@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const stripe = require('stripe')('')
+const stripe = require('stripe')(
+  'sk_test_51IB2toIHFmBhTQLt7Zdv64qF5ZmhPfLkkMSlpzFyjavCK6HbURxCnoc17wNr6GSF8WLZq1tIJhF6PCAIHGPSisHO004hkygaYQ'
+)
 const uuid = require('uuid').v4
 const { User } = require('../../models/User')
 const { CashPay } = require('../../models/CashPays')
