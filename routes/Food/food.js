@@ -1,3 +1,4 @@
+
 const Food = require('../../models/Food')
 
 const getAll = (req, res) => {
