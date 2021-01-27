@@ -25,6 +25,30 @@ const BusinessFood = new Schema({
   Category: {
     type: String,
     required: true
+  },
+  ComboUno: {
+    type: String,
+    required: true
+  },
+  ComboDos: {
+    type: String,
+    required: true
+  },
+  ComboTres: {
+    type: String,
+    required: true
+  },
+  cmbDescripcionUno: {
+    type: String,
+    required: true
+  },
+  cmbDescripcionDos: {
+    type: String,
+    required: true
+  },
+  cmbDescripcionTres: {
+    type: String,
+    required: true
   }
 })
 

@@ -16,6 +16,10 @@ router.use(
   '/public/images/foods',
   express.static('server/public/images/foods/')
 )
+router.use(
+  '/public/images/combos',
+  express.static('server/public/images/combos/')
+)
 
 router.use('/api/users', user)
 router.use('/api/food', food)
