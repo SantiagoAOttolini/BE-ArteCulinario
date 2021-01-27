@@ -1,16 +1,29 @@
-const express = require("express");
-const Food = require("../../models/Food");
-const router = express.Router();
+const express = require('express')
 
-router.post("/addFood", (req, res) => {
-  const food = new Food(req.body);
+const router = express.Router()
+const Food = require('../../models/Food')
+const Reward = require('../../models/BusinessFood')
+
+router.post('/addFood', (req, res) => {
+  const food = new Food(req.body)
 
   food.save((err, doc) => {
-    if (err) return res.json({ success: false, err });
+    if (err) return res.json({ success: false, err })
     return res.status(200).json({
-      success: true,
-    });
-  });
-});
+      success: true
+    })
+  })
+})
 
-module.exports = router;
+router.post('/addReward', (req, res) => {
+  const reward = new Reward(req.body)
+
+  reward.save((err, doc) => {
+    if (err) return res.json({ success: false, err })
+    return res.status(200).json({
+      success: true
+    })
+  })
+})
+
+module.exports = router
