@@ -5,6 +5,7 @@ const cors = require('cors')
 const router = require('./routes')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
+global.CronJob = require('./backup/cron');
 
 const config = require('./config/key')
 
