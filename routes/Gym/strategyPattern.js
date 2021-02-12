@@ -51,14 +51,14 @@ function imperioGym() {
 router.post("/gymContextPrice", (req, res) => {
   const gymPrice = req.body.price;
   const gymName = req.body.name;
-  const total=0;
+  let total=0;
   console.log("nombre:", gymName, "precio:", gymPrice);
 
-  if (gymName === "Megathlon") {
+  if (gymName === "Megatlon") {
     const discount = megatholGym();
     total = (gymPrice * discount) / 100;
   }
-  if (gymName === "Athlon") {
+  if (gymName === "Atlon") {
     const discount = athlonGym();
     total = (gymPrice * discount) / 100;
   }
