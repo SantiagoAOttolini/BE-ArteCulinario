@@ -3,7 +3,7 @@ const Food = require('../../models/Food')
 
 const getAll = (req, res) => {
   Food.find({}, (err, foods) => {
-    if (err) res.send({ msg: 'can`t get the user list', error: err })
+    if (err) res.send({ msg: 'can`t get the food list', error: err })
     res.send(foods)
   })
 }

@@ -17,9 +17,10 @@ const getFind = (url, req, res) => {
         res.status(200).json({ success: true, data: pays })
       })
   } else if (url === '/getCashPaysById') {
-    CashPay.find({ recipeId: req.params.recipeId }).exec((err, favorites) => {
+    //CAMBIAR
+    CashPay.find({ ID: req.params._id }).exec((err, cashPay) => {
       if (err) return res.status(400).send(err)
-      return res.status(200).json({ success: true, favorites })
+      return res.status(200).json({ success: true, cashPay })
     })
   }
 }
