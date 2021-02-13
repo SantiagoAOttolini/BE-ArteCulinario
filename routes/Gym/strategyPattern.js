@@ -56,15 +56,15 @@ router.post("/gymContextPrice", (req, res) => {
 
   if (gymName === "Megatlon") {
     const discount = megatholGym();
-    total = (gymPrice * discount) / 100;
+    total = gymPrice -((gymPrice * discount) / 100);
   }
   if (gymName === "Atlon") {
     const discount = athlonGym();
-    total = (gymPrice * discount) / 100;
+    total = gymPrice -((gymPrice * discount) / 100);
   }
   if (gymName === "Imperio") {
     const discount = imperioGym();
-    total = (gymPrice * discount) / 100;
+    total = gymPrice -((gymPrice * discount) / 100);
   }
   console.log(total);
 
