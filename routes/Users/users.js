@@ -69,7 +69,7 @@ router.get("/logout", auth, (req, res) => {
     }
   );
 });
-
+//Send mail
 router.post("/sendMail", (req, res) => {
   User.findOne({ email: req.body.email }, (err, user) => {
     if (!user)
@@ -102,7 +102,7 @@ router.post("/sendMail", (req, res) => {
         secure: false,
         auth: {
           user: "soporte.arteculinario@gmail.com",
-          pass: "40675511ss",
+          pass: "sANTI123",
         },
         tls: {
           rejectUnauthorized: false,
@@ -111,8 +111,8 @@ router.post("/sendMail", (req, res) => {
       const mailOptions = {
         from: "Remitente",
         to: thisUser,
-        subject: "Recuperacion de contraseña |Cocinarte|",
-        text: `Tu nueva contraseña es${newPassword}es recomendable que la cambies en tu proximo inicio de sesion`,
+        subject: "Recuperacion de contraseña |Arte Culinario|",
+        text: `Tu nueva contraseña es ${newPassword} es recomendable que la cambies en tu proximo inicio de sesion. Gracias.`,
       };
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
