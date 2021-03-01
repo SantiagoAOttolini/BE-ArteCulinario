@@ -17,23 +17,6 @@ router.post("/addGym", (req, res) => {
     return res.status(200).json({ success: true });
   });
 });
-
-/* router.get("/getGym", (req, res) => {
-  Gym.find()
-    .populate("_id")
-    .exec((err, gym) => {
-      if (err) return res.status(400).send(err);
-      res.status(200).json({ success: true, data: gym });
-    });
-});
-
-router.get("/getGymById", (req, res) => {
-  Gym.find({ ID: req.params._id }).exec((err, gyms) => {
-    if (err) return res.status(400).send(err);
-    return res.status(200).json({ success: true, gyms });
-  });
-}); */
-
 /////////////////////// Strategy pattern to calculate gym price ///////////////////
 function megatholGym() {
   const discount = 20;
